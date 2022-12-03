@@ -2,13 +2,13 @@
 <%= render '/users/new_book', book: @book %>
 
 <div class="book">
-<table class="table table-striped">
+ <h2>Books</h2>    
+ <table class="table table-striped">
     <thead>
      <tr>
         <th>        </th>
         <th>Title</th>
         <th>Opinion</th>
-        <th colspan="1"></th>
      </tr>
     </thead>
 
@@ -19,7 +19,5 @@
         <td><%= image_tag book.user.get_profile_image, size: "50,50"  %></td>
         <td><%= link_to "book.title" , book_path(book.id), class: "link" %></td>
         <td><%= book.opinion %></td>
-        <td><%= link_to "Show", book_path(book.id), class: "btn btn-secondary" %></td>
-       </tr>
       <% end %>
-    </tbody>  
+    </tbody>
