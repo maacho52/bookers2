@@ -15,9 +15,17 @@
 
       <% @books.each do |book| %>
        <tr>
-        <td><%= image_tag book.user.get_profile_image, size: "50,50"  %></td>
+        <td><%= image_tag book.user.get_profile_image, size: "50,50"  %>
+         <p><%= link_to "book.user.name", user_path(book.user_id) %></p>
+        </td>
         <td><%= link_to "book.title", book_path(book.id), class: "link" %></td>
         <td><%= book.opinion %></td>
+        <% if book.user == current_user %>
+          <td><%= link_to "Edit", edit_book_path(book.id), class: "btn btn-success" %></td>
+          <td><%= link_to "Destroy", book_path(book.id), method: :delete, class: "btn btn-danger" %></td>
+        <% end %>  
+       </tr>
+        
        </tr>
       <% end %>
      </tbody>
