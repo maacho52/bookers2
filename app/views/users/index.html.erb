@@ -6,9 +6,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>      </th>
-        <th>Title</th>
-        <th>Opinion</th>
+        <th>image</th>
+        <th>name</th>
       </tr>
     </thead>
 
@@ -19,7 +18,7 @@
           <th>
             <%= link_to book.title, book_path(book.id)  %>
           </th>
-          <th><%= book.opinion %></th>
+          <th><%= link_to "show", user_path(@user.id) %></th>
         </tr>
       <% end %>
     </tbody>
