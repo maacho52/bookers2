@@ -11,7 +11,13 @@
   </head>
 
   <body>
-    <%= flash[:notice] %>]
+    <% if notice %>
+      <p><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p><%= alert %></p>
+    <% end %>
+     
    <header class="bg-dark text-white" >
      <% if user_signed_in? %>
        <li>
