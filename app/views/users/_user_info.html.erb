@@ -1,6 +1,6 @@
 <!-- ユーザーの詳細 -->
 <div>
-   <%= image_tag user.get_profile_image, size:"50,50" %>
+   <%= image_tag user.get_profile_image(100,100) %>
    <p class="profile-heding">name</p>
    <p class="profile-input"><%= user.name %></p>
    <p class="profile-heding">introdution</p>
@@ -8,4 +8,3 @@
    <% if user == current_user %>
      <p><%= link_to "User info", edit_user_path(user.id) %></p>
    <% end %>
-</div> 
