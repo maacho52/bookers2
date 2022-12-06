@@ -1,7 +1,11 @@
-<%= render 'users/user_info', user: @user %>
-<%= render 'users/new_book', book: @book %>
+<div class="row-lg-2">
+  <%= render 'users/user_info', user: @user %>
+</div>
+<div class="row-lg-2">
+  <%= render 'users/new_book', book: @book %>
+</div>
 
-<div class="book">
+<div class="col-lg-8">
  <h2>Books</h2>
  <table class="table table-striped">
     <thead>
