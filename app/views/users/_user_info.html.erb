@@ -1,10 +1,21 @@
 <!-- ユーザーの詳細 -->
-<div>
-   <%= image_tag user.get_profile_image(100,100) %>
-   <p class="profile-heding">name</p>
-   <p class="profile-input"><%= user.name %></p>
-   <p class="profile-heding">introdution</p>
-   <p class="profile-input"><%= user.introduction %></p>
-   <% if user == current_user %>
-     <p><%= link_to "User info", edit_user_path(user.id) %></p>
-   <% end %>
+<div class="container">
+    <%= image_tag user.get_profile_image(100,100) %>
+    <table class="table">
+       <tbody>
+          <tr>
+             <th>name</th>
+             <td><%= user.name %></td>
+          </tr>
+
+          <tr>
+             <th>introduction</th>
+             <td><%= user.introduction %></td>
+          </tr>
+       </tbody>
+    </table>
+
+    <% if user == current_user %>
+      <p><%= link_to "User info", edit_user_path(user.id) %></p>
+    <% end %>
+</div>
