@@ -5,6 +5,7 @@ before_action :correct_user, only: [:edit, :update]
     @user = current_user
     @book = Book.new
     @books = Book.all
+    @users = User.all
   end
 
   def show
