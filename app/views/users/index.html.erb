@@ -4,12 +4,12 @@
     <%= render 'user_info', user: @user %>
     <%= render 'new_book', book: @book %>
   </div>
-  
+
   <div class="col-lg-1"></div>
 
   <div class="col-lg-5">
     <h2>Books</h2>
-    <table class="table table-striped">
+    <table class="table">
       <thead>
         <tr>
           <th>image</th>
@@ -28,7 +28,8 @@
           </tr>
         <% end %>
       </tbody>
+    </table>
   </div>
-  
+
   <div class="col-lg-2"></div>
 </div>
