@@ -4,9 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :books
+  has_many :books, dependent: :destroy
+  validates :name, presence: true, length: { maximum: 30, minimun: 2, allow_blank: true }
 
   has_one_attached :profile_image
+
 
   def get_profile_image(width, height)
    unless profile_image.attached?
