@@ -15,14 +15,14 @@
        <% end %>
 
        <p>Title</p>
-       <%= f.text_field :title %>
+       <%= f.text_field :title, :size=>"50" %>
 
        <p>Opiniton</p>
-       <%= f.text_area :opinion %>
+       <%= f.text_area :opinion, :size=>"50" %>
      </div>
 
      <div class="submit-button">
-       <%= link_to "Create Book", '/books', class: "btn btn-success" %>
+       <%= link_to "Update Book", '/books', class: "btn btn-success" %>
      </div>
 
      <div class="button">
