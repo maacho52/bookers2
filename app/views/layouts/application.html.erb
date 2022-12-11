@@ -64,6 +64,7 @@
          <% if alert %>
            <p><%= alert %></p>
          <% end %>
+         <%= flash[:notice] %>
         <div class="col-lg-1"></div>
         <div class="col-lg-11">
          <%= yield %>
