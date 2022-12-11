@@ -17,6 +17,9 @@
     </table>
 
     <% if user == current_user %>
-      <p><%= link_to "User info", edit_user_path(user.id) %></p>
+      <p><%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
+           <i class="fa-solid fa-user-gear"></i>
+         <% end %>
+      </p>
     <% end %>
 </div>
