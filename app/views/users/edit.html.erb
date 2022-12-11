@@ -3,9 +3,14 @@
   <div class="col-lg-4">
    <h2>User info</h2>
 
-   <% @user.errors.full_messages.each do |message| %>
-     <%= message %>
-   <% end %>
+   <% if @user.errors.any? %>
+   <%= pluralize(@user.errors,count, "error") %> prohibited this obj from being saved:
+   <ul>
+     <% @user.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+
 
    <%= form_with model: @user do |f| %>
      <label for="inputName">Name</label>
@@ -19,4 +24,4 @@
   </div>
 
   <div class="col-lg-4"></div>
-</div>  
+</div>
