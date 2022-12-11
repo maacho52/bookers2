@@ -1,9 +1,15 @@
-</h2>welcome to Bookers !!</h2>
-<p>In Bookers,<br>
-   you can share and exchange your opinions , inpressions , and emotions<br>
-   about various books!</p>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      </h2><span>welcome to</span> Bookers !!</h2>
+      <p>In Bookers,<br>
+        you can share and exchange your opinions , inpressions , and emotions<br>
+        about various books!</p>
 
-<div class="d-grid gap-2 d-md-block">
-  <%= link_to "Log in", new_user_session_path, class: "btn btn-success" %>
-  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info" %>
+      <div class="d-grid gap-2 col-10">
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-sm btn-success btn-block" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sm btn-info btn-block" %>
+      </div>
+    </div>
+  </div>
 </div>
