@@ -25,7 +25,7 @@ before_action :correct_user, only: [:edit]
       redirect_to book_path(@book.id)
     else
       @books = Book.all
-      render :show
+      render :index
     end
   end
 
@@ -47,7 +47,7 @@ before_action :correct_user, only: [:edit]
   private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:title, :body)
   end
 
   def correct_user
