@@ -35,13 +35,24 @@ before_action :correct_user, only: [:edit]
     if @book.update(book_params)
       flash[:notice] = "You have updated book successfully."
       redirect_to book_path(@book)
+    else
+      render :edit
     end
   end
+
+
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to '/books'
 
+  end
+
+  def ensure_correct_user
+    @book = Book.find(params[:id])
+    if @book.user_id != current_user.id
+      redirect_to '/books'
+    end
   end
 
   private
