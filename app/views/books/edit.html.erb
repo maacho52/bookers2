@@ -2,18 +2,18 @@
   <div class="col-lg-2"></div>
   <div class="col-lg-10">
    <h2>Editing Book</h2>
+    <% if @book.errors.any? %>
+      <%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
    <%= form_with model:@book, url: book_path(@book.id), method: :patch do |f| %>
 
      <div class="box">
-       <% if @book.errors.any? %>
-       <%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:
-         <ul>
-           <% @book.errors.full_messages.each do |message| %>
-             <li><%= message %></li>
-           <% end %>
-         </ul>
-       <% end %>
-
        <p>Title</p>
        <%= f.text_field :title, :size=>"50" %>
 
