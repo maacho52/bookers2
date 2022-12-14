@@ -13,8 +13,8 @@ before_action :correct_user, only: [:edit]
   end
 
   def show
-    @user = current_user
     @book = Book.find(params[:id])
+    @new_book = Book.new
   end
 
   def create
@@ -48,17 +48,10 @@ before_action :correct_user, only: [:edit]
 
   end
 
-  def ensure_correct_user
-    @book = Book.find(params[:id])
-    if @book.user_id != current_user.id
-      redirect_to '/books'
-    end
-  end
-
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :user_id)
   end
 
   def correct_user
