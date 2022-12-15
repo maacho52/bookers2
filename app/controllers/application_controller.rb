@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
     #after_sign_in_path_forはDeviseが用意しているメソッドでサインイン後にどこに遷移するかを設定している
     def after_sign_in_path_for(resource)
-      user_path(@user.id)
+      user_path(current_user.id)
     end
 
     #Deviseが用意しているメソッド。サインアウト後の遷移先の指定
