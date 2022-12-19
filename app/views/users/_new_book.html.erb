@@ -1,5 +1,5 @@
-<h3>New Book</h3>
-<%= form_with model: book do |f| %>
+<h3>New book</h3>
+<%= form_with model: Book.new, url: books_path do |f| %>
   <h7>Title</h7>
   <%= f.text_field :title %>
 
